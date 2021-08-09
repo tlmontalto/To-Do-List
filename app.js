@@ -23,6 +23,14 @@ const renderList = () => {
         itemsCompleted.append(listItem)
     }
 
+    const removeBtn = document.createElement('button')
+    removeBtn.innerText = 'Remove'
+    listItem.appendChild(removeBtn)
+
+    removeBtn.onclick = () => {
+        listItem.remove()
+        removeBtn.remove()
+    }
 }
 
 submitButton.onclick = () => {
