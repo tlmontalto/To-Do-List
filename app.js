@@ -11,10 +11,17 @@ const renderList = () => {
         listItem.innerText = items
         toDoList.appendChild(listItem)
     }
+
+    const completeBtn = document.createElement('button');
+    completeBtn.innerText = 'Completed'
+    listItem.append(completeBtn)
+    listItem.append(completeBtn)
+
+    
 }
 
 submitButton.onclick = () => {
-    const inputValue = document.querySelector('input').value
+    const inputValue = document.querySelector('#input-box').value
     listArray.push(inputValue)
     renderList()
 }
