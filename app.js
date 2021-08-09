@@ -8,7 +8,13 @@ const renderList = () => {
     let listItem = document.createElement('li')
 
     for (let items of listArray) {
-        listItem.innerText = items;
+        listItem.innerText = items
         toDoList.appendChild(listItem)
     }
+}
+
+submitButton.onclick = () => {
+    const inputValue = document.querySelector('input').value
+    listArray.push(inputValue)
+    renderList()
 }
