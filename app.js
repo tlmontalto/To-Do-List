@@ -17,7 +17,12 @@ const renderList = () => {
     listItem.append(completeBtn)
     listItem.append(completeBtn)
 
-    
+    completeBtn.onclick = () => {
+        listItem.remove()
+        completeBtn.remove()
+        itemsCompleted.append(listItem)
+    }
+
 }
 
 submitButton.onclick = () => {
