@@ -25,6 +25,15 @@ button:focus {
     animation: rotate-center 0.6s ease-in-out both;
 }
 
+input {
+    width: 300px;
+    padding: 1em;
+}
+  
+  input:focus {
+    outline: none;
+}
+
 
 /* .complete-button {
     background-color: springgreen;
