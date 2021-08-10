@@ -5,31 +5,33 @@ const itemsCompleted = document.querySelector('.completed-list')
 const listArray = []
 
 const renderList = () => {
-    let listItem = document.createElement('li')
+    let listItem = document.createElement('div')
 
     for (let items of listArray) {
         listItem.innerText = items
         toDoList.appendChild(listItem)
+        listItem.className = 'list-item'
     }
 
     const completeBtn = document.createElement('button');
+    completeBtn.classList.add('complete-button')
     completeBtn.innerText = 'Completed'
-    listItem.append(completeBtn)
+    completeBtn.style.backgroundColor = 'green';
     listItem.append(completeBtn)
 
     completeBtn.onclick = () => {
         listItem.remove()
         completeBtn.remove()
         itemsCompleted.append(listItem)
-    }
-
-    const removeBtn = document.createElement('button')
-    removeBtn.innerText = 'Remove'
-    listItem.appendChild(removeBtn)
-
-    removeBtn.onclick = () => {
-        listItem.remove()
-        removeBtn.remove()
+        listItem.className = 'done-item'
+        const removeBtn = document.createElement('button')
+        removeBtn.innerText = 'Remove'
+        removeBtn.style.backgroundColor = 'red';
+        listItem.appendChild(removeBtn)
+        removeBtn.onclick = () => {
+            listItem.remove()
+            removeBtn.remove()
+        }
     }
 }
 
